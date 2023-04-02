@@ -4,6 +4,8 @@
 
 ## Author: Afteni Maria
 
+----
+
 # Theory
 
 A language is a set of rules that define the use of a finite, non-empty series of symbols. The rules are interpreted as 

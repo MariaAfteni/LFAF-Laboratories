@@ -76,4 +76,55 @@ public class Grammar {
         }
         return finiteAutomaton;
     }
+
+    public String CheckGrammarType(String[] prodVal, char[] prodKey, String[] prodKey1){
+
+        // Check if the grammar is regular
+        if (isRegular(prodVal, prodKey)) {
+            return "\nGrammar Type 3: Regular";
+        }
+
+        // Check if the grammar is context-free
+        if (isContextFree(prodKey)) {
+            return "\nGrammar Type 2: Context-free";
+        }
+
+        // Check if the grammar is context-sensitive
+        if (isContextSensitive(prodKey1)) {
+            return "\nGrammar Type 1: Context-sensitive";
+        }
+      else{
+        // The grammar is recursively enumerable by default
+        return "\nGrammar Type 0: Recursively enumerable";}
+    }
+
+    public boolean isRegular(String[] prodVal, char[] prodKey){
+        for ( String val : prodVal ) {
+            for (char key : prodKey) {
+                if ((val.length() == 1 && Character.isUpperCase(key)) || (val.length() == 2 && Character.isUpperCase(val.charAt(0)) && Character.isLowerCase(val.charAt(1)))
+                        || (val.length() == 2 && Character.isUpperCase(val.charAt(1)) && Character.isLowerCase(val.charAt(0)))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isContextFree(char[] prodKey) {
+        for (char key : prodKey) {
+            if (Character.isLowerCase(key)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isContextSensitive(String[] prodKey1) {
+        for (String key : prodKey1) {
+            if (key.length() == 1 || key.length() == 2){
+                return true;
+            }
+        }
+        return false;
+    }
 }

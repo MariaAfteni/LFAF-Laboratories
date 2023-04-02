@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LFAF Labs.iml" filepath="$PROJECT_DIR$/LFAF Labs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Reports/Reports.iml" filepath="$PROJECT_DIR$/Reports/Reports.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LFAF Lab 1.iml" filepath="$PROJECT_DIR$/LFAF Lab 1.iml" />
     </modules>
   </component>
 </project>
