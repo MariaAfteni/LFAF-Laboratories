@@ -230,3 +230,4 @@ Graphical representation of NFA
 During this laboratory work, I understood better the Chomsky hierarchy and the difference between DFA and NFA. 
 Creating a method that converts a non-deterministic FA to a deterministic one, helped me to comprehend the process of 
 how it is done, not only theoretically, but, also practically. 
+
