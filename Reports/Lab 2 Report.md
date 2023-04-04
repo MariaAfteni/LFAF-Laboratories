@@ -53,14 +53,6 @@ check the type of grammar.
 If the grammar has a production of the form A → aB or A → a, where A and B are non-terminal symbols and a is a terminal 
 symbol, then it is a Grammar of Type 3.
 
-If the production contains a non-terminal symbol that derives one or more non-terminal and terminal symbols, then it is
-context-free and the Grammar is of Type 2.
-
-If the production is of the form aAb → acb, where A is a non-terminal symbol, a and b are strings of terminals and 
-non-terminals, and c is a string of terminals and non-terminals with a length greater than or equal to 1, the Grammar is of Type 1.
-
-In any other case, the grammar is Recursively enumerable, being of Type 0.
-
     public String CheckGrammarType(String[] prodVal, char[] prodKey, String[] prodKey1){
 
         // Check if the grammar is regular
@@ -82,6 +74,9 @@ In any other case, the grammar is Recursively enumerable, being of Type 0.
         return "\nGrammar Type 0: Recursively enumerable";}
     }
 
+If the production contains a non-terminal symbol that derives one or more non-terminal and terminal symbols, then it is
+context-free and the Grammar is of Type 2.
+
     public boolean isRegular(String[] prodVal, char[] prodKey){
         for ( String val : prodVal ) {
             for (char key : prodKey) {
@@ -96,6 +91,11 @@ In any other case, the grammar is Recursively enumerable, being of Type 0.
         return false;
     }
 
+
+If the production is of the form aAb → acb, where A is a non-terminal symbol, a and b are strings of terminals and 
+non-terminals, and c is a string of terminals and non-terminals with a length greater than or equal to 1, the Grammar is of Type 1.
+
+
     public boolean isContextFree(char[] prodKey) {
         for (char key : prodKey) {
             if (Character.isLowerCase(key)){
@@ -104,6 +104,8 @@ In any other case, the grammar is Recursively enumerable, being of Type 0.
         }
         return true;
     }
+
+In any other case, the grammar is Recursively enumerable, being of Type 0.
 
     public boolean isContextSensitive(String[] prodKey1) {
         for (String key : prodKey1) {
