@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         char[] Vn = {'S', 'P', 'Q'};
@@ -45,8 +47,15 @@ public class Main {
         }
         System.out.println("}");
 
+        String source = "Example 23021 -,- <3";
+        Lexer lexer = new Lexer();
+
+        System.out.println("\nLexical Analysis");
+        String[] tokens = lexer.Tokenize(source);
+        ArrayList<String> result = lexer.LexicalAnalysis(tokens);
+        for (String s : result) {
+            System.out.println(s);
+        }
+
     }
-
-
-
 }
