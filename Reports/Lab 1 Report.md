@@ -59,7 +59,7 @@ After the strings are created, the finiteAutomaton method is called, which asset
 it into a Finite Automaton. The transitions are then used to determine if the strings created can be obtained via the 
 state transition from the automaton.
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 # Conclusions
 

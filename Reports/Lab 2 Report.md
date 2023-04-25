@@ -225,7 +225,7 @@ After execution, the output of the program is:
 
 Graphical representation of NFA
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 During this laboratory work, I understood better the Chomsky hierarchy and the difference between DFA and NFA. 
 Creating a method that converts a non-deterministic FA to a deterministic one, helped me to comprehend the process of 
