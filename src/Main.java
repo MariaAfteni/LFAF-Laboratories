@@ -17,6 +17,7 @@ public class Main {
         String[] Production = new String[]{"S->aB", "S->AC", "A->a", "A->ASC", "A->BC", "A->aD", "B->b", "B->bS",
                 "C->ε", "C->BA", "E->aB", "D->abC"};
 //
+//        --- Lab 1
 //        Grammar grammar = new Grammar(Vn, Vt, prodKey, prodVal, start);
 //
 //        ArrayList <String> generatedWords = grammar.generateWords(5);
@@ -28,6 +29,7 @@ public class Main {
 //            finiteAutomaton.wordIsValid(generatedWords.get(i));
 //        }
 //
+//        --- Lab 2
 //        System.out.println(grammar.CheckGrammarType(prodVal, prodKey, prodKey1));
 //
 //        System.out.println("\nProduction of converted FA to grammar: \n P = {");
@@ -49,71 +51,78 @@ public class Main {
 //        }
 //        System.out.println("}");
 //
-//        String source = "Example 23021 -,- <3";
-//        Lexer lexer = new Lexer();
-//
+        String source = "Example 23021 -,- 3";
+        Lexer lexer = new Lexer();
+
+//      --- Lab 3
 //        System.out.println("\nLexical Analysis");
-//        String[] tokens = lexer.Tokenize(source);
-//        ArrayList<String> result = lexer.LexicalAnalysis(tokens);
+        String[] tokens = lexer.Tokenize(source);
+        ArrayList<String> result = lexer.LexicalAnalysis(tokens);
 //        for (String s : result) {
 //            System.out.println(s);
 //        }
-        NormalForm n1 = new NormalForm();
-        ArrayList<String> noEpsilon = n1.noEpsilon();
-        ArrayList<String> noRenaming = n1.noRenaming(noEpsilon);
-        ArrayList<String> noInaccessible = n1.noInaccessible(noRenaming);
-        ArrayList<String> noNonproductive = n1.noNonproductive(noInaccessible);
-        ArrayList<String> normalForm = n1.normalForm(noNonproductive);
 
+//        --- Lab 4
+//        NormalForm n1 = new NormalForm();
+//        ArrayList<String> noEpsilon = n1.noEpsilon();
+//        ArrayList<String> noRenaming = n1.noRenaming(noEpsilon);
+//        ArrayList<String> noInaccessible = n1.noInaccessible(noRenaming);
+//        ArrayList<String> noNonproductive = n1.noNonproductive(noInaccessible);
+//        ArrayList<String> normalForm = n1.normalForm(noNonproductive);
+//
+//
+//        if(Production.length == noEpsilon.size()){
+//            System.out.println("Production doesn't contain epsilon transitions");
+//        }else{
+//            System.out.println("Final production with no epsilon transitions:");
+//            for (String s : noEpsilon) {
+//                System.out.println(s);
+//            }
+//        }
+//        Thread.sleep(5000);
+//
+//        System.out.println("-----------------------------------------------------");
+//        if(Production.length == noRenaming.size()){
+//            System.out.println("Production doesn't contain renaming transitions");
+//        }else{
+//            System.out.println("Final production with no renaming transitions:");
+//            for (String s : noRenaming) {
+//                System.out.println(s);
+//            }
+//        }
+//        Thread.sleep(5000);
+//
+//        System.out.println("-----------------------------------------------------");
+//        if(Production.length == noInaccessible.size()){
+//            System.out.println("Production doesn't contain inaccessible symbols");
+//        }else{
+//            System.out.println("Final production with no inaccessible symbols:");
+//            for (String s : noInaccessible) {
+//                System.out.println(s);
+//            }
+//        }
+//        Thread.sleep(5000);
+//
+//        System.out.println("-----------------------------------------------------");
+//        if(Production.length == noNonproductive.size()){
+//            System.out.println("Production doesn't contain nonproductive transitions");
+//        }else{
+//            System.out.println("Final production with no nonproductive transitions:");
+//            for (String s : noNonproductive) {
+//                System.out.println(s);
+//            }
+//        }
+//        Thread.sleep(5000);
+//
+//        System.out.println("-----------------------------------------------------");
+//        System.out.println("Chomsky Normal Form Production");
+//        for (String s : normalForm) {
+//            System.out.println(s);
+//        }
 
-        if(Production.length == noEpsilon.size()){
-            System.out.println("Production doesn't contain epsilon transitions");
-        }else{
-            System.out.println("Final production with no epsilon transitions:");
-            for (String s : noEpsilon) {
-                System.out.println(s);
-            }
-        }
-        Thread.sleep(5000);
-
-        System.out.println("-----------------------------------------------------");
-        if(Production.length == noRenaming.size()){
-            System.out.println("Production doesn't contain renaming transitions");
-        }else{
-            System.out.println("Final production with no renaming transitions:");
-            for (String s : noRenaming) {
-                System.out.println(s);
-            }
-        }
-        Thread.sleep(5000);
-
-        System.out.println("-----------------------------------------------------");
-        if(Production.length == noInaccessible.size()){
-            System.out.println("Production doesn't contain inaccessible symbols");
-        }else{
-            System.out.println("Final production with no inaccessible symbols:");
-            for (String s : noInaccessible) {
-                System.out.println(s);
-            }
-        }
-        Thread.sleep(5000);
-
-        System.out.println("-----------------------------------------------------");
-        if(Production.length == noNonproductive.size()){
-            System.out.println("Production doesn't contain nonproductive transitions");
-        }else{
-            System.out.println("Final production with no nonproductive transitions:");
-            for (String s : noNonproductive) {
-                System.out.println(s);
-            }
-        }
-        Thread.sleep(5000);
-
-        System.out.println("-----------------------------------------------------");
-        System.out.println("Chomsky Normal Form Production");
-        for (String s : normalForm) {
-            System.out.println(s);
-        }
+//        --- Lab 5
+        Parser parser = new Parser();
+        parser.Parse(result);
     }
 }
 
